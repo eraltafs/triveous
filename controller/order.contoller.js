@@ -1,6 +1,38 @@
 const { OrderModel } = require("../models/order.model");
 const { CartModel } = require("../models/cart.model");
+//  get all  orders
+const getOrderHistory = async (req, res) => {
+  const { userId } = req.body;
 
+  try {
+    const orders = await OrderModel.find({ userId });
+
+    res.status(200).send(orders);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Error fetching order history" });
+  }
+};
+// get specific product
+const getOrderDetails = async (req, res) => {
+  const { orderId } = req.params;
+
+  try {
+    // Find the specific order by its ID
+    const order = await OrderModel.findById(orderId);
+
+    if (!order) {
+      return res.status(404).json({ message: "Order not found" });
+    }
+
+    res.json({ order });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Error fetching order details" });
+  }
+};
+
+// Place order
 const order = async (req, res) => {
   const { userId } = req.body;
   const { productId } = req.params;
@@ -51,4 +83,6 @@ const order = async (req, res) => {
 // exports
 module.exports = {
   order,
+  getOrderHistory,
+  getOrderDetails,
 };
