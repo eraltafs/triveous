@@ -2,6 +2,79 @@
 
 https://triveous.onrender.com/
 
+# E-Commerce API Documentation
+Welcome to the documentation for the E-Commerce API! This API provides various endpoints to manage users, products, categories, carts, and orders for an E-commerce application.
+
+## Table of Contents
+
+* [Getting Started](#getting-started)
+
+  * [Prerequisites](#prerequisites)
+
+  * [Installation](#installation)
+
+  * [Running the Server](#running-the-server)
+
+* [Authentication](#authentication)
+
+* [Rate Limiting](#rate-limiting)
+
+* [Endpoints](#endpoints)
+  * [User Endpoints](#user-endpoints)
+
+  * [Product Endpoints](#product-endpoints)
+
+  * [Category Endpoints](#category-endpoints)
+
+  * [Cart Endpoints](#cart-endpoints)
+
+  * [Order Endpoints](#order-endpoints)
+
+* [Models](#models)
+
+* [Controllers](#controllers)
+
+* [Middleware](#middleware)
+
+## Getting Started
+### Prerequisites
+
+ Before running the API, ensure you have the following software installed:
+
+
+* MongoDB (Make sure it's running locally or provide the database URL in the .env file)
+
+### Installation
+1. Clone this repository to your local machine:
+
+        git clone https://github.com/manoj7654/triveous_assignment.git
+
+2. Install the dependencies:
+
+            cd triveous_assignment
+            npm install
+3. Create a .env file in the root of the project and add the following variables:
+
+        MongoDB connection URL
+        mongoUrl=your mongoUrl
+
+        Secret key for JWT authentication
+        key=your secret ky
+
+        Port number to run the server 
+        port=your port no
+### Running the Server
+To start the API server, use the following command:
+
+
+      npm start
+The server will be available at http://localhost:your port no/ 
+
+### Authentication
+The API uses JSON Web Tokens (JWT) for authentication. When a user registers or logs in successfully, a JWT token is generated and provided in the response. This token should be included in the Authorization header for secure access to protected endpoints.
+
+### Rate Limiting
+To prevent abuse and enhance security, the API implements rate limiting using the express-rate-limit middleware. This limits the number of requests from an IP address within a specific time window.
 
 
 ## Endpoints
