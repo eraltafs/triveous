@@ -52,8 +52,8 @@ Welcome to the documentation for the E-Commerce API! This API provides various e
         git clone https://github.com/eraltafs/triveous.git
 
 2. Install the dependencies:
-  cd triveous
-  npm install
+    cd triveous
+    npm install
 3. Create a .env file in the root of the project and add the following variables:
 
         MongoDB connection URL
