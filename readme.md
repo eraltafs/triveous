@@ -24,9 +24,9 @@ Welcome to the documentation for the E-Commerce API! This API provides various e
 
   - [User Endpoints](#user-endpoints)
 
-  - [Product Endpoints](#product-endpoints)
-
   - [Category Endpoints](#category-endpoints)
+
+  - [Product Endpoints](#product-endpoints)
 
   - [Cart Endpoints](#cart-endpoints)
 
@@ -78,19 +78,15 @@ The server will be available at http://localhost:8000/
 
 ### Authentication
 
-The API uses JSON Web Tokens (JWT) for authentication. When a user registers or logs in successfully, a JWT token is generated and provided in the response. This token should be included in the Authorization header for secure access to protected endpoints.
-
-### Rate Limiting
-
-To prevent abuse and enhance security, the API implements rate limiting using the express-rate-limit middleware. This limits the number of requests from an IP address within a specific time window.
+    When a user registers or logs in successfully, a JWT token is generated and provided in the response. This token should be included in the header for secure access to protected endpoints.
 
 ## Endpoints
 
-### User Routes
+### User Endpoints
+
+`Create a new user account`
 
 #### POST /register
-
-Register a new user.
 
 **Request Body:**
 
@@ -105,6 +101,7 @@ Register a new user.
 **Response:**
 
 Status: 201 Created
+
 Body:
 
 ```json
@@ -139,7 +136,7 @@ Body:
 }
 ```
 
-### Category Routes
+### Category Endpoints
 
 Create a new category.
 
@@ -188,7 +185,7 @@ Body:
 ]
 ```
 
-### Product Routes
+### Product Endpoints
 
 #### POST /products
 
@@ -268,7 +265,7 @@ Body:
 }
 ```
 
-### Cart Routes
+### Cart Endpoints
 
 #### GET /cart
 
@@ -349,7 +346,7 @@ Body:
 }
 ```
 
-### Order Routes
+### Order Endpoints
 
 #### POST /order/:productId
 
@@ -420,3 +417,23 @@ Body:
   "orderDate": "2023-07-26T10:15:00.000Z"
 }
 ```
+
+
+### Models
+  - The API uses the following models to interact with the MongoDB database:
+
+      * UserModel: Represents the user schema and model.
+      * ProductModel: Represents the product schema and model.
+      * CategoryModel: Represents the category schema and model.
+      * CartModel: Represents the cart schema and model.
+      * OrderModel: Represents the order schema and model.
+### Controllers
+  - Controllers handle the business logic for each endpoint and interact with the database through the corresponding models. They are responsible for processing requests and sending responses.
+
+      * users.controller: Handles user registration and login functionality.
+      * product.controller: Manages product creation and retrieval.
+      * category.controller: Handles category creation and retrieval.
+      * cart.controller: Manages cart functionality, such as adding, updating, and deleting items.
+      * order.controller: Manages order placement and retrieval.
+### Middleware
+  - authenticate: Authentication middleware that checks the validity of the JWT token and ensures secure access to protected routes.
