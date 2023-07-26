@@ -1,3 +1,11 @@
+## Deployment 
+```
+https://triveous.onrender.com
+
+```
+
+
+
 ## Endpoints
 
 ### User Routes
