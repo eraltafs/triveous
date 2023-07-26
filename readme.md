@@ -1,7 +1,6 @@
 ## Deployment 
 ```
 https://triveous.onrender.com
-
 ```
 
 
