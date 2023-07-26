@@ -61,14 +61,12 @@ Before running the API, ensure you have the following software installed:
     ```
 3.  Create a .env file in the root of the project and add the following variables:
 
-        MongoDB connection URL
-        mongoUrl=your mongoUrl
-
-        Secret key for JWT authentication
-        key=your secret ky
-
-        Port number to run the server
-        port=your port no
+    ```
+    MongoDB connection URL
+    mongoUrl=<your mongoUrl>
+    Secret key for JWT authentication
+    key=<your secret key>
+    ```
 
 ### Running the Server
 
@@ -76,7 +74,7 @@ To start the API server, use the following command:
 
       npm start
 
-The server will be available at http://localhost:your port no/
+The server will be available at http://localhost:8000/
 
 ### Authentication
 
