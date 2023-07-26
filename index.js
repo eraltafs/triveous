@@ -22,8 +22,8 @@ app.get("/", authenticate, (req, res) => {
 app.use("/", userRouter);
 app.use("/category", categoryRouter);
 app.use("/products", productRouter);
-app.use("/cart", cartRouter);
-app.use("/order",orderRouter)
+app.use("/cart",authenticate, cartRouter);
+app.use("/order",authenticate, orderRouter)
 
 app.listen(8000, async () => {
   await connection();

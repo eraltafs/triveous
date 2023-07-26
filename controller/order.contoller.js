@@ -2,7 +2,7 @@ const { OrderModel } = require("../models/order.model");
 const { CartModel } = require("../models/cart.model");
 //  get all  orders
 const getOrderHistory = async (req, res) => {
-  const { userId } = req.body;
+  const { userId } = req.user;
 
   try {
     const orders = await OrderModel.find({ userId });
@@ -34,7 +34,7 @@ const getOrderDetails = async (req, res) => {
 
 // Place order
 const order = async (req, res) => {
-  const { userId } = req.body;
+  const { userId } = req.user;
   const { productId } = req.params;
 
   try {

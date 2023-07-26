@@ -3,7 +3,7 @@ const {ProductModel}=require("../models/product.model")
 
 // gettign all data
 const getAllDataFromCart = async (req, res) => {
-  const {userId} = req.body;
+  const { userId } = req.user;
   try {
     const data = await CartModel.find({ userId });
     res.status(200).json(data);
@@ -16,7 +16,7 @@ const getAllDataFromCart = async (req, res) => {
 };
 
 const addToCart = async (req, res) => {
-  const { userId } = req.body;
+  const { userId } = req.user;
   const { productId} = req.params
   try {
     const product = await ProductModel.findById(productId);
@@ -69,7 +69,8 @@ const addToCart = async (req, res) => {
 
 //  update quantity
 const updateQuantity = async (req, res) => {
-  const { userId, quantity } = req.body;
+  const { quantity } = req.body;
+  const { userId } = req.user;
   const { productId} = req.params
   try {
     let cart = await CartModel.findOne({ userId });
@@ -108,7 +109,7 @@ const updateQuantity = async (req, res) => {
 
 //  delete
 const deleteItem = async (req, res) => {
-  const { userId } = req.body;
+  const { userId } = req.user;
   const productId = req.params.productId;
   try {
     let cart = await CartModel.findOne({ userId });

@@ -1,8 +1,6 @@
-// importing express for creating userRouter
-const express = require("express");
 
-// making router
-const userRouter = express.Router();
+const {Router} = require("express");
+const userRouter = Router();
 
 const { register, login } = require("../controller/user.controller");
 

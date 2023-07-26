@@ -35,10 +35,10 @@ const getProductByCategoryId = async (req, res) => {
 
 // get products using productId
 const getProductByProductId = async (req, res) => {
-  const {_id} = req.params.productId;
-  
+  const { productId } = req.params;
+
   try {
-    const product = await ProductModel.findOne(_id);
+    const product = await ProductModel.findById(productId);
     res.status(200).json(product);
   } catch (error) {
     console.log(error);
