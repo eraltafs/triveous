@@ -25,8 +25,9 @@ Register a new user.
 **Response:**
 
 Status: 201 Created
+Body:
 ```json
-Body:{
+{
   "message": "Account created successfully"
 }
 ```
