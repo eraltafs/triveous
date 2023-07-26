@@ -6,77 +6,76 @@
 Register a new user.
 
 **Request Body:**
-
 ```json
 {
   "name": "John Doe",
   "email": "john.doe@example.com",
   "password": "password123"
 }
+```
 
-{
-  "name": "John Doe",
-  "email": "john.doe@example.com",
-  "password": "password123"
-}
-
-
-
-Response:
+**Response:**
 
 Status: 201 Created
+```json
 Body:{
   "message": "Account created successfully"
 }
+```
+#### POST /login
 
-POST /login
 Login with existing user credentials.
 
-Request Body:{
+**Request Body:**
+```json
+{
   "email": "john.doe@example.com",
   "password": "password123"
 }
-
-Response:
+```
+**Response:**
 
 Status: 201 Created
+
 Body:
-json
-Copy code
+```json
 {
   "token": "your_jwt_token",
   "message": "Login Successful"
 }
+```
 
-Category Routes
-POST /category
+### Category Routes
+
 Create a new category.
 
-Request Body:
-
-json
-Copy code
+#### POST /category
+**Request Body:**
+```json
 {
   "name": "Electronics"
 }
-Response:
+```
+**Response:**
 
 Status: 201 Created
+
 Body:
-json
-Copy code
+```json
 {
   "message": "Category added successfully"
 }
-GET /category
+```
+
+#### GET /category
+
 Get all categories.
 
-Response:
+**Response:**
 
 Status: 200 OK
 Body:
-json
-Copy code
+```json
 [
   {
     "_id": "category_id",
@@ -88,14 +87,17 @@ Copy code
   },
   ...
 ]
-Product Routes
-POST /products
+```
+
+
+### Product Routes
+
+#### POST /products
 Create a new product.
 
-Request Body:
+**Request Body:**
 
-json
-Copy code
+```json
 {
   "title": "Smartphone",
   "description": "High-end smartphone with great features.",
@@ -103,24 +105,24 @@ Copy code
   "availability": true,
   "categoryId": "category_id"
 }
-Response:
+```
+**Response:**
 
 Status: 201 Created
 Body:
-json
-Copy code
+```json
 {
   "message": "Product added successfully"
 }
-GET /products/category/:categoryId
+```
+#### GET /products/category/:categoryId
 Get all products under a specific category.
 
-Response:
+**Response:**
 
 Status: 200 OK
 Body:
-json
-Copy code
+```json
 [
   {
     "_id": "product_id",
@@ -140,15 +142,15 @@ Copy code
   },
   ...
 ]
-GET /products/id/:productId
+```
+#### GET /products/id/:productId
 Get a specific product by its ID.
 
-Response:
+**Response:**
 
 Status: 200 OK
 Body:
-json
-Copy code
+```json
 {
   "_id": "product_id",
   "title": "Smartphone",
@@ -157,16 +159,16 @@ Copy code
   "availability": true,
   "categoryId": "category_id"
 }
-Cart Routes
-GET /cart
+```
+### Cart Routes
+#### GET /cart
 Get all data from the user's cart.
 
-Response:
+**Response:**
 
 Status: 200 OK
 Body:
-json
-Copy code
+```json
 {
   "_id": "cart_id",
   "userId": "user_id",
@@ -181,71 +183,74 @@ Copy code
   ],
   "totalPrice": 999.98
 }
-POST /cart/:productId
+```
+
+#### POST /cart/:productId
 Add a product to the cart.
 
-Response:
+**Response:**
 
 Status: 200 OK
 Body:
-json
-Copy code
+```json
 {
   "message": "Product added to cart successfully"
 }
-PATCH /cart/:productId
+```
+
+#### PATCH /cart/:productId
 Update the quantity of a product in the cart.
 
-Request Body:
+**Request Body:**
 
-json
-Copy code
+```json
 {
   "quantity": 3
 }
-Response:
+```
+
+**Response:**
 
 Status: 200 OK
 Body:
-json
-Copy code
+```json
 {
   "message": "Cart item updated successfully"
 }
-DELETE /cart/:productId
+```
+#### DELETE /cart/:productId
 Delete an item from the cart.
 
-Response:
+**Response:**
 
 Status: 200 OK
 Body:
-json
-Copy code
+```json
 {
   "message": "Cart item deleted successfully"
 }
-Order Routes
-POST /order/:productId
+```
+### Order Routes
+#### POST /order/:productId
 Place an order for a specific product.
 
-Response:
+**Response:**
 
 Status: 200 OK
 Body:
-json
-Copy code
+```json
 {
   "message": "Order placed successfully"
 }
-GET /order
+```
+#### GET /order
 Get the order history for the authenticated user.
 
-Response:
+**Response:**
 
 Status: 200 OK
 Body:
-json
-Copy code
+```json
 [
   {
     "_id": "order_id",
@@ -263,15 +268,15 @@ Copy code
   },
   ...
 ]
-GET /order/:orderId
+```
+#### GET /order/:orderId
 Get detailed information of a specific order by its ID.
 
-Response:
+**Response:**
 
 Status: 200 OK
 Body:
-json
-Copy code
+```json
 {
   "_id": "order_id",
   "userId": "user_id",
@@ -286,3 +291,4 @@ Copy code
   "totalAmount": 999.98,
   "orderDate": "2023-07-26T10:15:00.000Z"
 }
+```
