@@ -181,7 +181,7 @@ Body:
     "_id": "category_id",
     "name": "Books"
   },
-  ...
+
 ]
 ```
 
@@ -241,7 +241,7 @@ Body:
     "availability": true,
     "categoryId": "category_id"
   },
-  ...
+
 ]
 ```
 
@@ -287,7 +287,7 @@ Body:
       "quantity": 2,
       "price": 999.98
     },
-    ...
+  
   ],
   "totalPrice": 999.98
 }
@@ -383,12 +383,12 @@ Body:
         "productId": "product_id",
         "quantity": 2
       },
-      ...
+    
     ],
     "totalAmount": 999.98,
     "orderDate": "2023-07-26T10:15:00.000Z"
   },
-  ...
+
 ]
 ```
 
@@ -411,7 +411,7 @@ Body:
       "productId": "product_id",
       "quantity": 2
     },
-    ...
+  
   ],
   "totalAmount": 999.98,
   "orderDate": "2023-07-26T10:15:00.000Z"
