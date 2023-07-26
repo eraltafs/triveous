@@ -44,15 +44,16 @@ Welcome to the documentation for the E-Commerce API! This API provides various e
 
 * MongoDB (Make sure it's running locally or provide the database URL in the .env file)
 
+* Node 18.16.0
+
 ### Installation
 1. Clone this repository to your local machine:
 
-        git clone https://github.com/manoj7654/triveous_assignment.git
+        git clone https://github.com/eraltafs/triveous.git
 
 2. Install the dependencies:
-
-            cd triveous_assignment
-            npm install
+  cd triveous
+  npm install
 3. Create a .env file in the root of the project and add the following variables:
 
         MongoDB connection URL
