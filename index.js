@@ -15,7 +15,7 @@ const { productRouter } = require("./routes/product.routes");
 const { cartRouter } = require("./routes/cart.routes");
 const { orderRouter } = require("./routes/order.routes");
 
-app.get("/", authenticate, (req, res) => {
+app.get("/", (req, res) => {
   res.send({ msg: "Base Api" });
 });
 
